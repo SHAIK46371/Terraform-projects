@@ -1,0 +1,22 @@
+This folder contains only configuration files that are related enabling state lock using dynamo db.
+
+For this you have to create an infrastructure.
+1. Create an AWS ubuntu EC2 instance with t2.micro, which is free
+2. Install terraform and you can get that from chatgpt (Ask like "Need to install terraform on ubuntu linux Ec2 INSTANCE)
+3. Create an repository in Github along with Readme file
+4. Clone the Repository and Go into the respository.
+5. Now create a directory of your work (Example: AWSS3-Statelocking/)
+6. Inside that create .tf files (main.tf, variables.tf, terraform.tfvars, backend.tf)
+7. When you give terraform init command, This command first downloads the provider plugin and configures the backend setup. so that first S3 bucket should be created or available. Then only backend.tf will be 
+   implemented
+8. Now Triggere the commands terraform init, terraform plan and terraform apply commands.
+9. Now succesfully the infrastructure will be provisioned.
+10. Along with this some extra files will be created in your PWD like (.terraform/ , .terraform.lock.hcl , terraform.tfstate , terraform.tfstate.backup)
+11. Now go to cloned repository where git init command is triggered. Here create a .gitignore file.
+12. Now move these (.terraform/ , .terraform.lock.hcl , terraform.tfstate , terraform.tfstate.backup)
+13. Now give git add .gitignore
+14. git commit -m "Added .gitignore file"
+15. git add .
+16. git commit -m "Added terraform configuration files"
+17. git push origin main
+18. Now successfully your local repository is pushed to remote repository
